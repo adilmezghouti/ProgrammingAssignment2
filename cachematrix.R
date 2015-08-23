@@ -1,8 +1,7 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
+## This function creates a matrix and allows you to read it, set it and calcualte the mean of it
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
   set <- function(y) {
@@ -13,12 +12,12 @@ makeCacheMatrix <- function(x = matrix()) {
   get <- function() x
   setinverse <- function(inverse) i <<- inverse
   getinverse <- function() i
+  list(set = set,get = get,getinverse = getinverse,setinverse = setinverse)
 }
 
 
-## Write a short comment describing this function
-
-cacheSolve <- function(x, ...) {
+## Calculates the inverse of a matrix and caches the result for future direct use
+cacheSolve <- function(x) {
         ## Return a matrix that is the inverse of 'x'
   i <- x$getinverse()
   if(!is.null(i)) {
@@ -26,7 +25,7 @@ cacheSolve <- function(x, ...) {
     return(i)
   }
   data <- x$get()
-  i <- solve(data, ...)
+  i <- solve(data)
   x$setinverse(i)
   i
 }
