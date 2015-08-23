@@ -1,5 +1,4 @@
-## Put comments here that give an overall description of what your
-## functions do
+## Functions allowing you to create a special matrix that has caching capabilities.
 
 ## This function creates a matrix and allows you to read it, set it and calcualte the mean of it
 makeCacheMatrix <- function(x = matrix()) {
